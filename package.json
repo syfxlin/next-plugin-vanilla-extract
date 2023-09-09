@@ -1,0 +1,62 @@
+{
+  "name": "@syfxlin/next-plugin-vanilla-extract",
+  "version": "1.0.0",
+  "description": "Zero-runtime Stylesheets-in-TypeScript",
+  "author": "Otstar Lin <i@ixk.me>",
+  "license": "MIT",
+  "keywords": [
+    "vanilla-extract",
+    "css-in-js",
+    "css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syfxlin/next-plugin-vanilla-extract.git"
+  },
+  "bugs": {
+    "url": "https://github.com/syfxlin/next-plugin-vanilla-extract/issues"
+  },
+  "homepage": "https://github.com/syfxlin/next-plugin-vanilla-extract#readme",
+  "peerDependencies": {
+    "next": ">=12.1.7",
+    "webpack": "^4.30.0 || ^5.20.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "next": "^13.4.19",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2"
+  },
+  "dependencies": {
+    "@vanilla-extract/integration": "^6.2.2",
+    "@vanilla-extract/webpack-plugin": "^2.3.0",
+    "loader-utils": "^2.0.0"
+  }
+}
