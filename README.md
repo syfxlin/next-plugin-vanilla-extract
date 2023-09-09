@@ -34,7 +34,7 @@ pnpm add -D @syfxlin/next-plugin-vanilla-extract
 ## Usage
 
 ```javascript
-const { createVanillaExtractPlugin } = require("@vanilla-extract/next-plugin");
+const { createVanillaExtractPlugin } = require("@syfxlin/next-plugin-vanilla-extract");
 const withVanillaExtract = createVanillaExtractPlugin();
 
 /** @type {import('next').NextConfig} */
