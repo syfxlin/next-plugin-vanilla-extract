@@ -34,6 +34,7 @@ pnpm add -D @syfxlin/next-plugin-vanilla-extract
 ## Usage
 
 ```javascript
+// next.config.js
 const { createVanillaExtractPlugin } = require("@syfxlin/next-plugin-vanilla-extract");
 const withVanillaExtract = createVanillaExtractPlugin();
 
@@ -44,6 +45,9 @@ const config = {
 
 module.exports = withVanillaExtract(config);
 ```
+
+Notes:
+- Currently, it is **not compatible with ESM**, so please **use CJS**. I am looking for solutions to fix ESM compatibility issue.
 
 ## Maintainer
 

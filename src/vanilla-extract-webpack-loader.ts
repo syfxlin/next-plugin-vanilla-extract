@@ -35,7 +35,10 @@ export function pitch(this: webpack.LoaderContext<any>) {
             // Next.js RSC CSS extraction will discard any loaders in the request.
             // So we need to pass virtual css information through resourceQuery.
             // https://github.com/vercel/next.js/blob/3a9bfe60d228fc2fd8fe65b76d49a0d21df4ecc7/packages/next/src/build/webpack/plugins/flight-client-entry-plugin.ts#L425-L429
-            `${emptyCssExtractionFile}?${JSON.stringify({ fileName, source: serializedCss })}`,
+            // The compressed serialized CSS of vanilla-extract will add compressionFlag.
+            // Causing the resourceQuery to be abnormally split, so uri encoding is required.
+            // https://github.com/vanilla-extract-css/vanilla-extract/blob/58005eb5e7456cf2b3c04ea7aef29677db37cc3c/packages/integration/src/serialize.ts#L15
+            `${emptyCssExtractionFile}?${encodeURIComponent(JSON.stringify({ fileName, source: serializedCss }))}`,
           );
 
           return `import ${request}`;
